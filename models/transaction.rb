@@ -355,7 +355,7 @@ class Transaction < Sequel::Model
     return @transfer if @transfer
 
     matching_transactions = matching_transfer_out.all
-    raise "No matching 'transfer_out' transactions found" if matching_transactions.empty?
+    raise "No matching 'transfer_out' transactions found for transaction: #{id}:#{platform_transaction_id}" if matching_transactions.empty?
     raise "Too many matching 'transfer_out' matching transactions found: #{matching_transactions.size}" if matching_transactions.size > 1
 
     from_transaction = matching_transactions.first

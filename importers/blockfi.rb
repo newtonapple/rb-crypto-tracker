@@ -111,6 +111,7 @@ module Importers
           parse_withdraw!(row)
         when 'Withdrawal Fee'
           parse_crypto_withdraw_fee!(row)
+          # when 'Wallet Liquidation To Cash' # push liquidation process until next year (2024)
         end
       end
       transactions
